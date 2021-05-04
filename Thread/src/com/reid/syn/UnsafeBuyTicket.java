@@ -7,6 +7,7 @@ package com.reid.syn;
  * @createDate: 2021/5/4 19:22
  * @version: 1.0
  * @description: 并发：多个线程操作同一个对象
+ * 每个线程都在自己的工作内存交互，内存控制不当会造成数据不一致，如出现负数
  */
 public class UnsafeBuyTicket {
     public static void main(String[] args) {
