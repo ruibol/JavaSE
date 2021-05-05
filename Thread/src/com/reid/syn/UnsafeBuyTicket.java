@@ -32,7 +32,9 @@ class BuyTicket implements Runnable {
         }
     }
 
-    private void buy() {
+    //synchronized 同步方法，实现锁。锁的是this（该方法所在的类的对象）
+    // 只读代码安全不需要，只有修改的时候需要锁确保安全性，但牺牲效率
+    private synchronized void buy() {
         //判断是否有票
         if (ticketNums <= 0) {
             flag = false;

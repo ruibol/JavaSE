@@ -16,11 +16,15 @@ public class UnsafeList {
         List<String> list = new ArrayList<String>();
         for (int i = 0; i < 10000; i++) {
             new Thread(()->{
-                list.add(Thread.currentThread().getName());
+                //锁不安全的、需要增删改的对象
+                //把list锁住线程就安全了
+                synchronized (list) {
+                    list.add(Thread.currentThread().getName());
+                }
             }).start();
         }
         try {
-            Thread.sleep(3000);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }

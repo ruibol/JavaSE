@@ -10,7 +10,7 @@ package com.reid.syn;
  */
 public class UnsafeBank {
     public static void main(String[] args) {
-        Account account = new Account(100, "结婚基金");
+        Account account = new Account(1000, "结婚基金");
         //两条线程取钱
         Drawing you = new Drawing(account, 50, "你");
         Drawing girlfriend = new Drawing(account, 100, "女朋友");
@@ -45,27 +45,32 @@ class Drawing extends Thread {
     }
 
     //取钱
+    //synchronized：哪改锁哪。默认锁this
     @Override
     public void run() {
-        //判断有没有钱
-        if (account.money - drawingMoney < 0) {
-            System.out.println(Thread.currentThread().getName() + "钱不够，取不了");
-            return;
+        //锁account，对account进行的增删改
+        //锁的是变化的量
+        synchronized (account){
+            //判断有没有钱
+            if (account.money - drawingMoney < 0) {
+                System.out.println(Thread.currentThread().getName() + "钱不够，取不了");
+                return;
+            }
+
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+            //余额
+            account.money -= drawingMoney;
+            //手里的钱
+            nowMoney += drawingMoney;
+
+            System.out.println(account.name + "余额为：" + account.money);
+            //Thread.currentThread().getName() = this.getName()
+            System.out.println(this.getName() + "手里的钱：" + nowMoney);
         }
-
-        try {
-            Thread.sleep(1000);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
-
-        //余额
-        account.money -= drawingMoney;
-        //手里的钱
-        nowMoney += drawingMoney;
-
-        System.out.println(account.name + "余额为：" + account.money);
-        //Thread.currentThread().getName() = this.getName()
-        System.out.println(this.getName() + "手里的钱：" + nowMoney);
     }
 }
