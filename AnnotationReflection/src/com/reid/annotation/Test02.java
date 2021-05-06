@@ -18,7 +18,7 @@ public class Test02 {
     }
 }
 
-//定义一个注解
+//用@interface自定义一个注解
 //四个元注解，重点是Target和Retention，基本是必写
 //Target 表示我们的注解可以用在哪些地方
 @Target(value = {ElementType.METHOD, ElementType.TYPE})
