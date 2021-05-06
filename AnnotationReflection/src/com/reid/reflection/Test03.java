@@ -27,6 +27,11 @@ public class Test03 {
 
         //方式四：基本内置类型的包装类都有一个Type属性
         Class c4 = Integer.TYPE;
+        System.out.println(c4);
+
+        //获得父类类型
+        Class c5 = c1.getSuperclass();
+        System.out.println(c5);
     }
 }
 
