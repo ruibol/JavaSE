@@ -1,5 +1,6 @@
 # JavaSE
 My JavaSE practice
+
 My Blog: [ruibol.github.io](https://ruibol.github.io)
 
 # Content
