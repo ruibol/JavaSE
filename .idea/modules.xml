@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/JUC/JUC.iml" filepath="$PROJECT_DIR$/JUC/JUC.iml" />
       <module fileurl="file://$PROJECT_DIR$/NetworkProgram/NetworkProgram.iml" filepath="$PROJECT_DIR$/NetworkProgram/NetworkProgram.iml" />
       <module fileurl="file://$PROJECT_DIR$/Thread/Thread.iml" filepath="$PROJECT_DIR$/Thread/Thread.iml" />
+      <module fileurl="file://$PROJECT_DIR$/知识点/知识点.iml" filepath="$PROJECT_DIR$/知识点/知识点.iml" />
     </modules>
   </component>
 </project>
