@@ -6,7 +6,7 @@ public class TestThis {
         /**
         * new一个子类对象
         * 我们知道，子类对象实例化时，会隐式调用父类的无参构造
-        * 所以Father里的System.out.println()会执行
+        * 所以Father()里的System.out.println()会执行
         * 猜猜打印的内容是什么？
         */
         Son son = new Son();
