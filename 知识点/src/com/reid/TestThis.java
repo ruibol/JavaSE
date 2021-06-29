@@ -31,7 +31,7 @@ class Son extends Father {
      * 隐式调用
      */
     public Son() {
-        //显示调用父类无参构造
+        //显示调用父类的无参构造器Father()
         super();
     }
 }
